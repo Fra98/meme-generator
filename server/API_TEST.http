@@ -1,0 +1,55 @@
+### LOGIN
+POST http://localhost:3001/api/sessions
+Content-Type: application/json
+
+{
+    "username": "elon.musk@polito.it",
+    "password": "tesla3"
+}
+
+### LOGOUT
+DELETE http://localhost:3001/api/sessions/current
+
+### GET CURRENT USER INFO
+GET http://localhost:3001/api/sessions/current
+
+
+
+
+### GET ALL MEMES (ONLY FOR LOGGED IN USERS)
+GET http://localhost:3001/api/memes/all
+
+
+### GET ALL PUBLIC MEMES (NOT LOGGED IN AND LOGGED IN)
+GET http://localhost:3001/api/memes/public
+
+
+### CREATE MEME
+POST http://localhost:3001/api/meme/create
+Content-Type: application/json
+
+{
+    "templateId": 0,
+    "title": "PDS",
+    "protected": 1,
+    "font": "arial",
+    "color": "black",
+    "vetText": ["When you pass System Programming at the first call", "", ""]
+}
+
+### COPY MEME
+POST http://localhost:3001/api/meme/copy/4
+Content-Type: application/json
+
+{
+    "userId": 2,
+    "templateId": 0,
+    "title": "PDS",
+    "protected": 1,
+    "font": "arial",
+    "color": "black",
+    "vetText": ["When you pass System Programming at the first call", "", ""]
+}
+
+### DELETE MEME
+DELETE http://localhost:3001/api/meme/16
